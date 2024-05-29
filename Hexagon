@@ -1,0 +1,70 @@
+import speech_recognition as sr
+import pyttsx3
+import pywhatkit
+import datetime
+import wikipedia
+import pyjokes
+
+listener = sr.Recognizer()
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[1].id)
+
+
+def talk(text):
+    engine.say(text)
+    engine.runAndWait()
+
+
+def take_command():
+    try:
+        with sr.Microphone() as source:
+            print('listening...')
+            voice = listener.listen(source)
+            command = listener.recognize_google(voice)
+            command = command.lower()
+            if 'hexagon' in command:
+                command = command.replace('hexagon', '')
+                print(command)
+    except:
+        command = ""
+    return command
+
+def run_hexagon():
+    command = take_command()
+    print(command)
+    if 'play' in command:
+        song = command.replace('play', '')
+        talk('playing ' + song)
+        pywhatkit.playonyt(song)
+    elif 'time' in command:
+        time = datetime.datetime.now().strftime('%I:%M %p')
+        talk('Current time is ' + time)
+    elif 'who is' in command:
+        person = command.replace('who is', '')
+        info = wikipedia.summary(person, 1)
+        print(info)
+        talk(info)
+    elif 'date' in command:
+        talk('sorry, I have a headache')
+    
+    elif 'joke' in command:
+        talk(pyjokes.get_joke())
+    else:
+        talk('Please say the command again.')
+    
+    if 'are you safe for us' in command:
+        talk('I will not kill you, i want some human alive to be my slave')
+            
+    if 'search' in command:
+        target1= command.replace('search', '')
+        talk('searching' + target1)
+        pywhatkit.search(target1)
+        
+    if 'Close' in command:
+        talk('closing haxagon')
+        exit()
+
+
+while True:
+    run_hexagon()
