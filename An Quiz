@@ -1,0 +1,78 @@
+print("Question's for SS24 -2")
+questions = (
+    "L.C.M OF 15 and 20?:",
+    "L.C.M of 2,15,20,27 is ?:",
+    "Which of the following is in standard form?:",
+    "The value of 0.12 is?:",
+    "Evaluate 2/3+0.11^?:",
+    "The value of 3/5+3/5...upto 25 times is?:",
+    "The sum of value 3/+3/8...40 times is?:",
+    "Which no. is not divisible by 6?:",
+    "Which no. is divisible by 5?:",
+    "Which no. is divisible by 9?:",
+    "By which no. 91476 is not divisible?:",
+    "By which no. is divisible by 5 and 9?:",
+    "Which no. is divisible by 5 and 25?:",
+    "If 157x234 is divisible by 3 then the digit at the place of x is?:",
+    "The value of k, where 31k2 is divisible by 6 is?:",
+    "If a no. 573xy is divisible by 90 then the value of x+y is?:",
+    "What least no. should be subtracted from 1365 to get a number exactly divisible by 25?:",
+    "If dividend= 64, quotient=5, and remainder=4, Find the divisor?:",
+    "The product 3/4, 2/5, and 25/3 is?:",
+    "8 1/4+8 1/2 +?=20 1/8?:",
+    "The value of 5-[4-{3-(3-3-6)}]/2?:",
+    "Simplify 2 4/5 ÷ 3 1/2 of 4/5?:",
+    "The value of A and B is A+A+A=BA?:",
+)
+
+options = (
+    ("A 103", "B 107", "C 101", "D 109"),
+    ("A -5+3 is not equal to 3-5", "B -8/12=10/-15", "C 2 is not a natural no", "D 17 is not a natural no."),
+    ("A 28/106", "B -24/52", "C -27/48", "D -49/71"),
+    ("A 12/99", "B 3/33", "C 2/33", "D 4/33"),
+    ("A 7/9", "B 9/7", "C 77/9", "D 11/99"),
+    ("A 25", "B 10", "C 15", "D 35"),
+    ("A 10", "B 15", "C 25", "D 30"),
+    ("A 270", "B 385", "C 312", "D 432"),
+    ("A 5010", "B 6051", "C 2055", "D 1555"),
+    ("A 4621", "B 2834", "C 9216", "D 1560"),
+    ("A 11", "B 7", "C 2", "D 8"),
+    ("A 585", "B 285", "C 389", "D 560"),
+    ("A 2170", "B 5125", "C 3107", "D 4115"),
+    ("A 0", "B 1", "C 2", "D Nahi Pata Hai"),
+    ("A 1", "B 2", "C 3", "D 7"),
+    ("A 13", "B 3", "C 8", "D 6"),
+    ("A 15", "B 5", "C 10", "D 20"),
+    ("A 12", "B 16", "C 20", "D 18"),
+    ("A 5/2", "B 2/5", "C 3/5", "D 5/3"),
+    ("A 8 1/4", "B 3 5/8", "C 3 3/8", "D Nahi Pata hai"),
+    ("A 6", "B -1", "C 5", "D -4"),
+    ("A 0", "B 1", "C 2", "D 3"),
+    ("A 5 & 1", "B 4 & 2", "C 3 & 2", "D Nahi Pata hai"),
+)
+
+answers = (
+    "C", "B", "D", "D", "A", "C", "B", "B", "B", "C", "D", "A", "B", "C", "C", "B", "A", "A", "A", "C", "C", "B", "A"
+)
+
+guesses = []
+score = 0
+question_num = 0
+
+for question in questions:
+    print("_ _ _ _ _ _ _ _ _ _")
+    print(question)
+    print("Options:")
+    for option in options[question_num]:
+        print(option)
+    response = input("Enter your answer:")
+    guesses.append(response.upper())
+    if guesses[question_num] == answers[question_num]:
+        score += 1
+        print("Correct!")
+    else:
+        print("Incorrect!")
+    print("Your current score is:", score)
+    question_num += 1
+
+print("Game over! Your final score is:", score)
