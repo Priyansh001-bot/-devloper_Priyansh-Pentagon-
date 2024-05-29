@@ -1,0 +1,15 @@
+
+
+
+print("WELCOME TO AMAZON")
+print("HOW MAY I HELP YOU")
+
+while True:
+    help = input("Your question: ")
+    if 'refund' in help:
+        print("You can refund your order after 7 days of delivery")
+    elif 'exchange' in help:
+        print("If your product is broken or damaged, you can ask for a refund or exchange")
+        break 
+    
+    
