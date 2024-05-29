@@ -1,0 +1,36 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Tracking App</title>
+</head>
+<body>
+  <h1>Vehicle Tracking App</h1>
+  
+  <label for="numberPlate">Enter Number Plate:</label>
+  <input type="text" id="numberPlate" name="numberPlate">
+  <button onclick="trackVehicle()">Track</button>
+  
+  <div id="locationResult"></div>
+
+  <script>
+    async function trackVehicle() {
+      const numberPlate = document.getElementById('numberPlate').value;
+      
+      const response = await fetch('/trackVehicle', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ numberPlate }),
+      });
+
+      const result = await response.json();
+
+      document.getElementById('locationResult').innerText = `Location: ${result.location}`;
+    }
+  </script>
+</body>
+</html>
