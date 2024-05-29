@@ -1,0 +1,55 @@
+# app.py
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+# Dummy user data (replace this with a database in a real application)
+users = [
+    {'username': 'user1', 'password': 'pass1'},
+    {'username': 'user2', 'password': 'pass2'},
+]
+
+@app.route('/')
+def home():
+    return 'Welcome to the login page!'
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        # Check if the entered credentials match any user
+        for user in users:
+            if user['username'] == username and user['password'] == password:
+                return f'Hello, {username}! You are now logged in.'
+
+        # If no match, show an error message
+        return 'Invalid username or password. Please try again.'
+
+    # If it's a GET request, show the login form
+    return '''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Login</title>
+        </head>
+        <body>
+            <h2>Login</h2>
+            <form method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br>
+        
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+        
+                <input type="submit" value="Login">
+            </form>
+        </body>
+        </html>
+    '''
+
+if __name__ == '__main__':
+    app.run(debug=True)
