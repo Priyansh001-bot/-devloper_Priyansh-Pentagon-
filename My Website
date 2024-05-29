@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyansh Saxena - Developer Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header h1 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .content h2 {
+            color: #333;
+        }
+        .content p {
+            font-size: 1.1em;
+        }
+        .skills {
+            margin: 20px 0;
+        }
+        .skills ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills ul li {
+            background: #77aaff;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Priyansh Saxena (@devloper_Priyansh)</h1>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>About Me</h2>
+            <p>
+                Hello! I am Priyansh Saxena, also known as @devloper_Priyansh (Pentagon) in the coding community. I am a passionate developer with expertise in a variety of programming languages and web technologies. My journey in coding began with a curiosity to understand how websites and applications work, which has now evolved into a passion for creating robust and user-friendly software.
+            </p>
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> edinitin@gmail.com</p>
+            <p><strong>Discord:</strong> @devloper_Priyansh </p>
+            <p><strong>Youtube Channel:</strong> @devloper_Priyansh </p>
+
+            <h2>Skills</h2>
+            <div class="skills">
+                <ul>
+                    <li>HTML: Proficient in crafting well-structured and semantic web pages.</li>
+                    <li>Java: Experienced in building object-oriented applications and understanding complex algorithms.</li>
+                    <li>JavaScript: Skilled in adding interactivity and dynamic behavior to web pages.</li>
+                    <li>Python: Versatile in writing clean and efficient code for various applications, including web development and data analysis.</li>
+                    <li>CSS: Adept at designing responsive and visually appealing web pages.</li>
+                </ul>
+            </div>
+            <p>I am always eager to learn new technologies and take on challenging projects that push the boundaries of my skills. Let's connect and create something amazing together!</p>
+        </div>
+    </div>
+</body>
+</html>
+
